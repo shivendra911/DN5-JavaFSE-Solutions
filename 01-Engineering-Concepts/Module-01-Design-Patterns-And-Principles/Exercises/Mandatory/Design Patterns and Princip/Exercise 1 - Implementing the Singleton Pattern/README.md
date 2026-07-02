@@ -7,17 +7,6 @@ The Singleton pattern is a creational design pattern that lets you ensure that a
 
 This pattern involves a single class which is responsible to create an object while making sure that only a single object gets created. This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class.
 
-## Files
-- `Singleton.java`: The Singleton class with a private constructor and a `getInstance()` method.
-- `SingletonPatternDemo.java`: The demo class that uses the Singleton class.
-- `Output.png`: Screenshot of the output.
+## Output
 
-## How to run
-1. Compile the Java files:
-   ```bash
-   javac SingletonPatternDemo.java Singleton.java
-   ```
-2. Run the demo:
-   ```bash
-   java SingletonPatternDemo
-   ```
+![Output](./output/Output.png)
