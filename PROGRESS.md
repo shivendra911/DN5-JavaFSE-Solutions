@@ -9,9 +9,10 @@ This document tracks progress against the official Digital Nurture 5.0 (DN 5.0) 
 ## Track 2: Programming Languages & Fundamentals
 - [x] **Module 3:** PL/SQL Programming
 - [x] **Module 4:** Test Driven Development (JUnit5 & Mockito) and Logging Framework (SLF4J)
-- [x] **Module 5:** Spring Core and Maven
+
 
 ## Track 3: Products and Frameworks
+- [x] **Module 5:** Spring Core and Maven
 - [ ] **Module 6:** Spring Data JPA with Spring Boot, Hibernate
 - [ ] **Module 7:** Spring REST using Spring Boot 3
 - [ ] **Module 8:** Microservices with Spring Boot 3 and Spring Cloud
