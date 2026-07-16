@@ -7,17 +7,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class LibraryManagementApplication {
 
     public static void main(String[] args) {
+
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        System.out.println("context loaded");
+        System.out.println("Spring context loaded successfully.");
 
-        BookService svc = (BookService) context.getBean("bookService");
+        BookService bookService = (BookService) context.getBean("bookService");
 
-        System.out.println("testing service");
-        String book = svc.getBookById(101);
-        System.out.println("got: " + book);
+        System.out.println("\n--- Testing BookService ---");
+        String book = bookService.getBookById(101);
+        System.out.println("Fetched: " + book);
 
-        svc.addBook("Clean Code");
+        bookService.addBook("Clean Code by Robert Martin");
 
         ((ClassPathXmlApplicationContext) context).close();
+        System.out.println("\nSpring context closed.");
     }
 }
