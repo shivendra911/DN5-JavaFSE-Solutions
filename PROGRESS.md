@@ -13,8 +13,8 @@ This document tracks progress against the official Digital Nurture 5.0 (DN 5.0) 
 
 ## Track 3: Products and Frameworks
 - [x] **Module 5:** Spring Core and Maven
-- [ ] **Module 6:** Spring Data JPA with Spring Boot, Hibernate
-- [ ] **Module 7:** Spring REST using Spring Boot 3
+- [x] **Module 6:** Spring Data JPA with Spring Boot, Hibernate
+- [x] **Module 7:** Spring REST using Spring Boot 3
 - [ ] **Module 8:** Microservices with Spring Boot 3 and Spring Cloud
 - [ ] **Module 9:** Single Page Application framework - React
 - [ ] **Module 10:** Application Debugging
