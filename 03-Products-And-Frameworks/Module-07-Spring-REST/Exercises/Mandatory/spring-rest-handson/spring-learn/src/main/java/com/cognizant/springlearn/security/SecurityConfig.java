@@ -17,6 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SecurityConfig.class);
 
+    // define in-memory users: admin and user, both with password 'pwd'
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -27,10 +28,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        LOGGER.info("Start passwordEncoder");
+        LOGGER.info("Start");
         return new BCryptPasswordEncoder();
     }
 
+    // define URL access rules and register the JWT authorization filter
+    // so every request gets checked for a valid Bearer token
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
@@ -39,8 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/country").permitAll()
                 .antMatchers("/hello").permitAll()
-                .antMatchers("/countries").hasRole("USER")
-                .antMatchers("/countries/**").hasRole("USER")
-                .antMatchers("/authenticate").hasAnyRole("USER", "ADMIN");
+                .antMatchers("/authenticate").hasAnyRole("USER", "ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .addFilter(new JwtAuthorizationFilter(authenticationManager()));
     }
 }
